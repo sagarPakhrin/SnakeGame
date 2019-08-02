@@ -12,7 +12,7 @@ namespace Sagar
 						SplashState(GameDataRef data);
 						void Init();
 						void HandleInput();
-						void Update();
+						void Update(float dt);
 						void Draw(float dt);
 
 				private:

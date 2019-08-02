@@ -16,9 +16,7 @@ namespace Sagar
 				AssetManager assets;
 				InputManager input;
 		};
-
 		typedef std::shared_ptr<GameData> GameDataRef;
-
 		class Game
 		{
 				public:

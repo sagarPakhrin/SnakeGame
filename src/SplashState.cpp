@@ -1,3 +1,4 @@
+
 #include <sstream>
 #include "SplashState.hpp"
 #include "DEFINATIONS.hpp"
@@ -39,9 +40,9 @@ namespace Sagar
 
 		void SplashState::Draw(float dt)
 		{
-				_data.window.clear();
-				_data.window.draw(_background);
-				_data.window.display();
+				_data->window.clear();
+				_data->window.draw(_background);
+				_data->window.display();
 		}
 
 }
