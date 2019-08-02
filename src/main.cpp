@@ -1,20 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include <time.h>
+#include "Game.hpp"
 using namespace sf;
 
 int main()
 {
-		sf::RenderWindow window(sf::VideoMode(800,600), "Snake Game");
-		while(window.isOpen())
-		{
-				sf::Event event;
-				while(window.pollEvent(event))
-				{
-						if(event.type == sf::Event::Closed)
-								window.close();
-				}
-				window.clear();
-				window.display();
-		}
+		Sagar::Game(80,600 "Snake Game");
 		return EXIT_SUCCESS;
 }
