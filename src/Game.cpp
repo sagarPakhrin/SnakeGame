@@ -26,7 +26,6 @@ namespace Sagar
 						{
 								frameTime = 0.25f;
 						}
-
 						currentTime = newTime;
 						accumulator += frameTime;
 

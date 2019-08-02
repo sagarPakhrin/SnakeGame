@@ -1,4 +1,3 @@
-
 #include <sstream>
 #include "SplashState.hpp"
 #include "DEFINATIONS.hpp"
