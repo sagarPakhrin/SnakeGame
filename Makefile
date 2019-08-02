@@ -3,7 +3,7 @@ CFLAGS = -c -Wall
 src = src
 CC = g++
 
-TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o
+TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o
 	$(CC) StateMachine.o AssetManager.o main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
 
 main.o: src/main.cpp
@@ -20,6 +20,9 @@ InputManager.o: $(src)/InputManager.cpp $(src)/InputManager.hpp
 
 Game.o: $(src)/Game.cpp $(src)/Game.hpp
 	$(CC) $(CFLAGS) $(src)/Game.cpp
+
+SplashState.o: $(src)/SplashState.cpp $(src)/SplashState.hpp
+	$(CC) $(CFLAGS) $(src)/SplashState.cpp
 
 
 

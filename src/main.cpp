@@ -1,8 +1,10 @@
 #include "Game.hpp"
+#include "DEFINATIONS.hpp"
+
 using namespace sf;
 
 int main()
 {
-		Sagar::Game(800,600,"Snake Game");
+		Sagar::Game(SCREEN_WIDTH,SCREEN_HEIGHT,"Snake Game");
 		return EXIT_SUCCESS;
 }
