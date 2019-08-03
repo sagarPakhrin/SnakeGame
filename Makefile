@@ -3,8 +3,8 @@ CFLAGS = -c -Wall
 src = src
 CC = g++
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o
-	$(CC) StateMachine.o AssetManager.o InputManager.o AssetManager.o MainMenuState.o SplashState.o main.o -o main $(LIBS)
+TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o
+	$(CC) StateMachine.o InputManager.o AssetManager.o GameState.o MainMenuState.o SplashState.o main.o -o main $(LIBS)
 
 main.o: $(src)/main.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/main.cpp
@@ -24,8 +24,11 @@ Game.o: $(src)/Game.cpp $(src)/Game.hpp
 SplashState.o: $(src)/SplashState.cpp $(src)/SplashState.hpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/SplashState.cpp
 
-MainMenuState.o: $(src)/MainMenuState.cpp $(src)/MainMenuState.hpp $(src)/DEFINATIONS.hpp
+MainMenuState.o: $(src)/MainMenuState.cpp $(src)/MainMenuState.hpp $(src)/DEFINATIONS.hpp $(src)/GameState.hpp
 	$(CC) $(CFLAGS) $(src)/MainMenuState.cpp
+
+GameState.o: $(src)/GameState.cpp $(src)/GameState.hpp $(src)/DEFINATIONS.hpp
+	$(CC) $(CFLAGS) $(src)/GameState.cpp
 
 
 clean:

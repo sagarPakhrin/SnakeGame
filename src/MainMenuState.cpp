@@ -1,6 +1,7 @@
 #include <sstream>
 #include "MainMenuState.hpp"
 #include "DEFINATIONS.hpp"
+#include "GameState.hpp"
 #include <iostream>
 
 namespace Sagar
@@ -13,11 +14,7 @@ namespace Sagar
 		void MainMenuState::Init()
 		{
 				_data->assets.LoadTexture("Main Menu",MAIN_MENU_BACKGROUND_FILEPATH);
-				/* _data->assets.LoadTexture("Game Title",GAME_TITLE_FILEPATH); */
 				_data->assets.LoadTexture("Play Button",PLAY_BUTTON_FILEPATH);
-
-				/* _title.setPosition( (SCREEN_WIDTH/2) - (_title.getGlobalBounds().width/2 ), _title.getGlobalBounds().height/2 ); */
-				/* _title.setTexture(this->_data->assets.GetTexture("Game Title")); */
 
 				_background.setTexture(this->_data->assets.GetTexture("Main Menu"));
 				_background.setScale(sf::Vector2f(0.85f, 0.95f));
@@ -40,7 +37,7 @@ namespace Sagar
 						}
 						if(_data->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _data->window))
 						{
-								std::cout<<"Go To Game Screen"<<std::endl;
+								_data->machine.AddState(StateRef (new GameState(_data)), true);
 						}
 				}
 		}
