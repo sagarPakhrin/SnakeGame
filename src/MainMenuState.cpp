@@ -13,19 +13,20 @@ namespace Sagar
 		void MainMenuState::Init()
 		{
 				_data->assets.LoadTexture("Main Menu",MAIN_MENU_BACKGROUND_FILEPATH);
-				_data->assets.LoadTexture("Game Title",GAME_TITLE_FILEPATH);
+				/* _data->assets.LoadTexture("Game Title",GAME_TITLE_FILEPATH); */
 				_data->assets.LoadTexture("Play Button",PLAY_BUTTON_FILEPATH);
 
+				/* _title.setPosition( (SCREEN_WIDTH/2) - (_title.getGlobalBounds().width/2 ), _title.getGlobalBounds().height/2 ); */
+				/* _title.setTexture(this->_data->assets.GetTexture("Game Title")); */
 
 				_background.setTexture(this->_data->assets.GetTexture("Main Menu"));
-				_title.setTexture(this->_data->assets.GetTexture("Game Title"));
+				_background.setScale(sf::Vector2f(0.85f, 0.95f));
+
+
 				_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 
-				_title.setPosition( (SCREEN_WIDTH/2) - (_title.getGlobalBounds().width/2 ), _title.getGlobalBounds().height/2 );
-
-				_playButton.setPosition( (SCREEN_WIDTH/2) - (_playButton.getGlobalBounds().width/2 ),(SCREEN_HEIGHT/2) - (_playButton.getGlobalBounds().height/2 ));
-
-
+				_playButton.setScale(sf::Vector2f(0.8f, 0.8f));
+				_playButton.setPosition( (SCREEN_WIDTH/2) - (_playButton.getGlobalBounds().width/2 ),(SCREEN_HEIGHT/2) -(_playButton.getGlobalBounds().height/2) + 160);
 		}
 
 		void MainMenuState::HandleInput()
@@ -36,6 +37,10 @@ namespace Sagar
 						if(sf::Event::Closed == event.type)
 						{
 								_data->window.close();
+						}
+						if(_data->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _data->window))
+						{
+								std::cout<<"Go To Game Screen"<<std::endl;
 						}
 				}
 		}
