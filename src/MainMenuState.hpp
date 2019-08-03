@@ -6,10 +6,10 @@
 
 namespace Sagar
 {
-		class SplashState: public State
+		class MainMenuState: public State
 		{
 				public:
-						SplashState(GameDataRef data);
+						MainMenuState(GameDataRef data);
 						void Init();
 						void HandleInput();
 						void Update(float dt);
@@ -17,9 +17,10 @@ namespace Sagar
 
 				private:
 						GameDataRef _data;
-						sf::Clock _clock;
 
 						sf::Sprite _background;
+						sf::Sprite _title;
+						sf::Sprite _playButton;
 
 		};
 }
