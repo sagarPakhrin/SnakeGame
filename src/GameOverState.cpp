@@ -1,24 +1,24 @@
 #include <sstream>
-#include "GameState.hpp"
+#include "GameOverState.hpp"
 #include "MainMenuState.hpp"
 #include "DEFINATIONS.hpp"
 #include <iostream>
 
 namespace Sagar
 {
-		GameState::GameState(GameDataRef data): _data(data)
+		GameOverState::GameOverState(GameDataRef data): _data(data)
 		{
 
 		}
 
-		void GameState::Init()
+		void GameOverState::Init()
 		{
 				std::cout<<"Game State"<<std::endl;
 				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		}
 
-		void GameState::HandleInput()
+		void GameOverState::HandleInput()
 		{
 				sf::Event event;
 				while(_data->window.pollEvent(event))
@@ -31,12 +31,12 @@ namespace Sagar
 		}
 
 
-		void GameState::Update(float dt)
+		void GameOverState::Update(float dt)
 		{
 
 		}
 
-		void GameState::Draw(float dt)
+		void GameOverState::Draw(float dt)
 		{
 				_data->window.clear(sf::Color(255,255,255));
 				_data->window.draw(_background);
