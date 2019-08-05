@@ -13,8 +13,10 @@ namespace Sagar
 
 		void GameState::Init()
 		{
-				std::cout<<"Game State"<<std::endl;
 				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		}
 

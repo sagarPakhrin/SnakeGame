@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "Game.hpp"
+#include "Snake.hpp"
 
 namespace Sagar
 {
@@ -20,6 +21,6 @@ namespace Sagar
 						sf::Clock _clock;
 
 						sf::Sprite _background;
-
+						Snake *snake;
 		};
 }

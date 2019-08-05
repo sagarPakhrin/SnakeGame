@@ -3,8 +3,8 @@ CFLAGS = -c -Wall
 src = src
 CC = g++
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o GameOverState.o
-	$(CC) StateMachine.o InputManager.o GameOverState.o AssetManager.o GameState.o MainMenuState.o SplashState.o main.o -o main $(LIBS)
+TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o GameOverState.o Snake.o
+	$(CC) StateMachine.o InputManager.o Snake.o GameOverState.o AssetManager.o GameState.o MainMenuState.o SplashState.o main.o -o main $(LIBS)
 
 main.o: $(src)/main.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/main.cpp
@@ -32,6 +32,9 @@ GameState.o: $(src)/GameState.cpp $(src)/GameState.hpp $(src)/DEFINATIONS.hpp
 
 GameOverState.o: $(src)/GameOverState.cpp $(src)/GameOverState.hpp
 	$(CC) $(CFLAGS) $(src)/GameOverState.cpp
+
+Snake.o: $(src)/Snake.cpp $(src)/Snake.hpp
+	$(CC) $(CFLAGS) $(src)/Snake.cpp
 
 clean:
 	rm -f *.o main
