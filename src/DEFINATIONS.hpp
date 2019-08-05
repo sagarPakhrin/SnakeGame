@@ -10,4 +10,5 @@
 #define MAIN_MENU_BACKGROUND_FILEPATH "src/Resources/res/playGame.png"
 
 #define GAME_BACKGROUND_FILE_PATH "src/Resources/res/gameBackground.png"
+#define GAME_OVER_BACKGROUND "src/Resources/res/gameBackground.png"
 #define PAUSE_BUTTON "src/Resources/res/Pause Button.png"

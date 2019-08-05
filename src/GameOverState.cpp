@@ -13,8 +13,7 @@ namespace Sagar
 
 		void GameOverState::Init()
 		{
-				std::cout<<"Game State"<<std::endl;
-				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+				_data->assets.LoadTexture("Game Over Background",GAME_OVER_BACKGROUND);
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		}
 
