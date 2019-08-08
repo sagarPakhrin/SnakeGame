@@ -12,6 +12,7 @@ namespace Sagar
 
 				snakeHead.setOrigin(snakeHead.getGlobalBounds().width/3*2,snakeHead.getGlobalBounds().height/3*4);
 				snakeHeadDirection= UP;
+				snakeLife= 3;
 		}
 		void Snake::Draw()
 		{
@@ -64,13 +65,17 @@ namespace Sagar
 				{
 						snakeHead.move(0,SPEED*-1);
 						if(snakeHead.getPosition().y<=0)
+						{
 								snakeHead.setPosition(snakeHead.getPosition().x,0);
+								snakeLife--;
+						}
 				}
 				else if (snakeHeadDirection == 2)
 				{
 						snakeHead.move(SPEED*1,0);
 						if(snakeHead.getPosition().x>=(SCREEN_WIDTH-snakeHead.getGlobalBounds().width/2))
 						{
+								snakeLife--;
 								snakeHead.setPosition(SCREEN_WIDTH-snakeHead.getGlobalBounds().width/2,snakeHead.getPosition().y);
 						}
 				}
@@ -79,6 +84,7 @@ namespace Sagar
 						snakeHead.move(0,SPEED*1);
 						if(snakeHead.getPosition().y>=(SCREEN_HEIGHT-snakeHead.getGlobalBounds().height))
 						{
+								snakeLife--;
 								snakeHead.setPosition(snakeHead.getPosition().x,SCREEN_HEIGHT-snakeHead.getGlobalBounds().height);
 						}
 				}
@@ -86,7 +92,10 @@ namespace Sagar
 				{
 						snakeHead.move(SPEED*-1,0);
 						if(snakeHead.getPosition().x<=0)
+						{
+								snakeLife--;
 								snakeHead.setPosition(0,snakeHead.getPosition().y);
+						}
 				}
 		}
 

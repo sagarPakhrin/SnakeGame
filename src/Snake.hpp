@@ -26,6 +26,6 @@ namespace Sagar
 
 						float SPEED=2.5f;
 						int snakeHeadDirection;
-
+						int snakeLife;
 		};
 }
