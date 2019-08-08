@@ -18,7 +18,6 @@ namespace Sagar
 
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
-
 				snake = new Snake(_data);
 		}
 
@@ -45,9 +44,7 @@ namespace Sagar
 				_data->window.clear(sf::Color(255,255,255));
 				_data->window.draw(_background);
 
-
 				snake->Draw();
 				_data->window.display();
 		}
-
 }

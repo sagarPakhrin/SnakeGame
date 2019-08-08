@@ -14,6 +14,7 @@ namespace Sagar
 						Snake(GameDataRef data); void Draw();
 						void Update();
 						void Animate(float dt);
+						void Rotate(int newDirection);
 				private:
 						GameDataRef _data;
 						sf::Sprite snakeHead;
