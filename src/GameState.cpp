@@ -13,8 +13,9 @@ namespace Sagar
 
 		void GameState::Init()
 		{
-				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+				_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILE_PATH);
 				_data->assets.LoadTexture("snakeHead",SNAKE_HEAD_FILE_PATH);
+				_data->assets.LoadTexture("snakeBody",SNAKE_BODY_FILE_PATH);
 
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 

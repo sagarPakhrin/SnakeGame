@@ -10,6 +10,8 @@ namespace Sagar
 				snakeHead.setPosition(_data->window.getSize().x/2,_data->window.getSize().y/2 - snakeHead.getGlobalBounds().height/2);
 				snakeHead.setScale(sf::Vector2f(0.5f, 0.5f));
 
+				body.setTexture(_data->assets.GetTexture("snakeBody"));
+
 				snakeHead.setOrigin(snakeHead.getGlobalBounds().width/3*2,snakeHead.getGlobalBounds().height/3*4);
 				snakeHeadDirection= UP;
 				snakeLife= 3;
@@ -96,6 +98,14 @@ namespace Sagar
 								snakeLife--;
 								snakeHead.setPosition(0,snakeHead.getPosition().y);
 						}
+				}
+		}
+
+		void Snake::DrawBody()
+		{
+				for (unsigned short int i=0;i<snakeBody.size() i++)
+				{
+						_data->window.draw(snakeBody.at(i));
 				}
 		}
 
