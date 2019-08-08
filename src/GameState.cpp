@@ -14,10 +14,12 @@ namespace Sagar
 		void GameState::Init()
 		{
 				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
-				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
-				_data->assets.LoadTexture("Game Background",GAME_TITLE_FILEPATH);
+				_data->assets.LoadTexture("snakeHead",SNAKE_HEAD_FILE_PATH);
 
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+
+
+				snake = new Snake(_data);
 		}
 
 		void GameState::HandleInput()
@@ -35,13 +37,16 @@ namespace Sagar
 
 		void GameState::Update(float dt)
 		{
-
+				snake->Update();
 		}
 
 		void GameState::Draw(float dt)
 		{
 				_data->window.clear(sf::Color(255,255,255));
 				_data->window.draw(_background);
+
+
+				snake->Draw();
 				_data->window.display();
 		}
 
