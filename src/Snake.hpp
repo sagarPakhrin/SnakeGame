@@ -23,7 +23,7 @@ namespace Sagar
 
 						sf::Clock _movementClock;
 
-						float SPEED=1.5f;
+						float SPEED=2.5f;
 						int snakeHeadDirection;
 
 		};

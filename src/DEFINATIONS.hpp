@@ -17,6 +17,6 @@
 #define PAUSE_BUTTON "src/Resources/res/Pause Button.png"
 
 #define UP 1
-#define LEFT 2
+#define RIGHT 2
 #define DOWN 3
-#define RIGHT 4
+#define LEFT 4
