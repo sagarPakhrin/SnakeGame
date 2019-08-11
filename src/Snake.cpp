@@ -8,7 +8,7 @@ namespace Sagar
 		{
 				snakeHead.setTexture(_data->assets.GetTexture("snakeHead"));
 				snakeHead.setPosition(_data->window.getSize().x/2,_data->window.getSize().y/2 - snakeHead.getGlobalBounds().height/2);
-				snakeHead.setScale(sf::Vector2f(0.5f, 0.5f));
+				snakeHead.setScale(sf::Vector2f(0.3f, 0.3f));
 
 				body.setTexture(_data->assets.GetTexture("snakeBody"));
 
@@ -103,7 +103,7 @@ namespace Sagar
 
 		void Snake::DrawBody()
 		{
-				for (unsigned short int i=0;i<snakeBody.size() i++)
+				for (unsigned short int i=0;i<snakeBody.size(); i++)
 				{
 						_data->window.draw(snakeBody.at(i));
 				}
